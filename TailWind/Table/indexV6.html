@@ -149,63 +149,22 @@
             }
         });
     </script>
-
     <script>
-        let currentIndex = -1;
+        let selectedRow = null;
 
-        document.addEventListener('keydown', function (e) {
-            const rows = document.querySelectorAll('#tableBody tr');
-            if (!rows.length) return;
-
-            // DOWN ARROW
-            if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                currentIndex = Math.min(currentIndex + 1, rows.length - 1);
-                selectRow(rows);
-            }
-
-            // UP ARROW
-            if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                currentIndex = Math.max(currentIndex - 1, 0);
-                selectRow(rows);
-            }
-        });
-
-        function selectRow(rows) {
-            // remove old selection
-            rows.forEach(r => r.classList.remove('!bg-blue-400', 'text-white'));
-
-            const row = rows[currentIndex];
-            if (!row) return;
-
-            // apply selection
-            row.classList.add('!bg-blue-400', 'text-white');
-
-            // auto scroll into view
-            row.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest'
-            });
-        };
-    </script>
-
-    <script>
-        const tbody = document.getElementById('tableBody');
-
-        tbody.addEventListener('click', function (e) {
-            const rows = document.querySelectorAll('#tableBody tr');
+        document.getElementById('tableBody').addEventListener('click', function (e) {
             const row = e.target.closest('tr');
             if (!row) return;
 
-            // update index (IMPORTANT)
-            currentIndex = Array.from(rows).indexOf(row);
+            // remove previous selection
+            if (selectedRow) {
+                selectedRow.classList.remove('!bg-blue-400', 'text-white');
+            }
 
-            // remove old selection
-            rows.forEach(r => r.classList.remove('!bg-blue-400', 'text-white'));
-
-            // apply selection
+            // add new selection (force override zebra)
             row.classList.add('!bg-blue-400', 'text-white');
+
+            selectedRow = row;
         });
     </script>
 </body>
