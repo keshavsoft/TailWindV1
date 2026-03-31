@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tailwind Navbar Test</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Heroicons (SVG inline, no extra CDN needed) -->
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- NAVBAR -->
+    <nav class="bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+
+            <!-- Mobile Header -->
+            <div class="flex justify-between items-center md:hidden">
+                <h1 class="text-lg font-semibold">Expand at md</h1>
+                <button onclick="toggleMenu()" class="text-2xl">☰</button>
+            </div>
+
+            <!-- MENU -->
+            <ul id="menu" class="hidden flex-col md:flex md:flex-row md:space-x-10 mt-4 md:mt-0">
+                <li class="flex justify-between items-center md:flex-col md:items-center">
+                    <span class="md:order-2 font-medium">Home</span>
+                    <!-- ICON -->
+                    <svg class="w-6 h-6 md:order-1 md:mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"
+                            d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V10z" />
+                    </svg>
+
+
+                </li>
+
+                <li class="flex justify-between items-center md:flex-col md:items-center">
+                    <span class="md:order-2 font-medium">Ledgers</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:order-1 md:mb-1" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"
+                            d="M3 7h18M3 12h18M3 17h18" />
+                    </svg>
+                </li>
+
+
+                <li class="flex justify-between items-center md:flex-col md:items-center">
+                    <span class="md:order-2 font-medium">StockItems</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:order-1 md:mb-1" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"
+                            d="M20 13V7a2 2 0 00-2-2h-3V3H9v2H6a2 2 0 00-2 2v6m16 0v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6m16 0H4" />
+                    </svg>
+                </li>
+
+                <li class="flex justify-between items-center md:flex-col md:items-center">
+                    <span class="md:order-2 font-medium">Bills</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:order-1 md:mb-1" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"
+                            d="M9 14l2 2 4-4M7 7h10M7 11h10M5 3h14a2 2 0 012 2v16l-3-2-3 2-3-2-3 2-3-2-3 2V5a2 2 0 012-2z" />
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+
+</html>
