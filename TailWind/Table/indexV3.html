@@ -91,11 +91,11 @@
                 <table class="w-full bg-white">
 
                     <!-- HEADER -->
-                    <thead class="bg-gray-300 sticky top-0 z-10">
-                        <tr class="text-gray-800">
-                            <th class="w-16 px-4 py-3 text-left font-semibold border-r">#</th>
-                            <th class="w-1/2 px-4 py-3 text-left font-semibold border-r">Name</th>
-                            <th class="px-4 py-3 text-left font-semibold">Value</th>
+                    <thead class="bg-gray-200 sticky top-0 z-10">
+                        <tr>
+                            <th class="w-16 px-4 py-4 text-left font-semibold border-r">#</th>
+                            <th class="w-1/2 px-4 py-4 text-left font-semibold border-r">Name</th>
+                            <th class="px-4 py-4 text-left font-semibold">Value</th>
                         </tr>
                     </thead>
 
@@ -105,10 +105,10 @@
                             let rows = '';
                             for (let i = 1; i <= 100; i++) {
                                 rows += `
-                        <tr class="border-t hover:bg-blue-100 odd:bg-gray-100 transition-colors duration-150">
-                            <td class="px-4 py-2 text-sm text-gray-500 border-r text-right">${i}</td>
-                            <td class="px-4 py-2 border-r">Item ${i}</td>
-                            <td class="px-4 py-2">Value ${i}</td>
+                        <tr class="border-t hover:bg-gray-200 odd:bg-gray-100 transition-colors duration-150">
+                            <td class="px-4 py-3 text-sm text-gray-500 border-r text-right">${i}</td>
+                            <td class="px-4 py-3 border-r">Item ${i}</td>
+                            <td class="px-4 py-3">Value ${i}</td>
                         </tr>`;
                             }
                             document.write(rows);
